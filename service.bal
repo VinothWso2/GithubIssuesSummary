@@ -14,4 +14,11 @@ service / on new http:Listener(9090) {
         }
         return "Hello, " + name;
     }
+    resource function get order(string value) returns int|error{
+         if (value==0) {
+            return error("Value should not be zero!");
+        }
+        return value;
+    }
+    }
 }
